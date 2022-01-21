@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tesseract_ocr/flutter_tesseract_ocr.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:tesseract_ocr/tesseract_ocr.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 _pickedImage =
                     await ImagePicker.pickImage(source: ImageSource.gallery);
                 _extractText =
-                    await TesseractOcr.extractText(_pickedImage.path);
+                    await FlutterTesseractOcr.extractText(_pickedImage.path);
                 setState(() {
                   _scanning = false;
                 });
