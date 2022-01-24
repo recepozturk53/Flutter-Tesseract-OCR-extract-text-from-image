@@ -77,11 +77,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
           SizedBox(height: 20),
           Center(
-            child: Text(
+            child: SelectableText(
               _extractText,
-              textAlign: TextAlign.center,
+              toolbarOptions: ToolbarOptions(
+                copy: true,
+                selectAll: true,
+              ),
               style: TextStyle(
-                fontSize: 30,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
